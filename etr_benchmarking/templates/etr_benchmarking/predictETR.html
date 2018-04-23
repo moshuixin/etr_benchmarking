@@ -1,0 +1,124 @@
+<div id="H" class="container js-scroll-step" style="height:100%">
+            <div class="row title-s" style="height: 7%">
+                <label class="second-title">ETR Prediction</label>
+            </div>
+              <div class="row" id="etr_page" style="height: 80%;overflow:auto">
+                  <div class="col-lg-12">
+                      <!-- left -->
+                      <div class="col-lg-4" >
+                          <div class="panel panel-default" >
+                              <div class="panel-heading">&#9776;Filter the company or industry</div>
+                               <div class="panel-body" id="dropbox">
+                                    <details>
+                                    <summary>Filter</summary>
+                                    <div class="form-group">
+                                        <label>Company</label>
+                                        <select class="form-control" onchange="companychoose()" id="companyDropdown1" required>
+                                            <!-- <option disabled selected hidden>-</option> -->
+                                            <!-- <option></option> -->
+                                        </select>
+                                        <br>
+                                        <div>Industry</div>
+
+                                        <div class="form-group"  >
+                                                <select class="form-control" id="industryDropdown_pre">
+                                                <!-- <option>All</option> -->
+                                                </select>
+                                        </div>
+                                    </div>
+                                    </details>
+                              </div>
+                          </div>
+                          <!-- left below 1-->
+                          <div class="panel panel-default" >
+
+                              <div class="panel-heading">&#9776; Target</div>
+                               <div class="panel-body"  >
+                                <details>
+                                <summary>Income Tax Expense (Mio $):</summary>
+                                        <div>
+                                            <div class="range-slider">
+                                                <input id = "statutory" class="range-slider__range" type="range" value="0", min="-500" max="500">
+                                                <p>1. Statutory tax: <span class="Value" id ="svalue"></span></p>
+                                            </div>
+                                            <div class="range-slider">
+
+                                                <input type="range" class="range-slider__range" id="foreign" class="range-slider__range" value="0", min="-500" max="500">
+                                                <p>2. Foreign inome tax differential: <span class="Value" id ="fvalue"></span></p>
+                                            </div>
+                                            <div class="range-slider">
+
+                                                <input type="range" class="range-slider__range"  id = "state" name="state"  class="range-slider__range" value="0", min="-500" max="500">
+                                                <p>3. State and local income taxes: <span class="Value" id ="statevalue"></span></p>
+                                            </div>
+                                            <div class="range-slider">
+
+                                                <input type="range" class="range-slider__range" id ="credit" name="credit"  class="range-slider__range" value="0", min="-500" max="500">
+                                                <p>4. Tax credit tax:<span class="Value" id ="credvalue"></span></p>
+                                            </div>
+                                            <div class="range-slider">
+                                                <input type="range" class="range-slider__range" id="nondeductible" name="dividend"  class="range-slider__range" value="0", min="-500" max="500">
+                                                <p>5. Nondeductible Expense: <span class="Value" id ="nonvalue"></span></p>
+
+                                            </div>
+                                            <div class="range-slider">
+
+                                                <input type="range" class="range-slider__range" id = "deductions"name="deductions"  class="range-slider__range" value="0", min="-500" max="500">
+                                                <p>6. Deductions: <span class="Value" id ="dvalue"></span></p>
+                                            </div>
+                                            <div class="range-slider">
+
+                                                <input type="range" class="range-slider__range" id="settlement" name="settlement"  class="range-slider__range" value="0", min="-500" max="500">
+                                                <p>7. Tax Settlement: <span  class="Value" id ="settvalue"></span></p>
+                                            </div>
+                                            <div class="range-slider">
+
+                                                <input type="range" class="range-slider__range" id = "contingency" name="contingency" class="range-slider__range" value="0", min="-500" max="500">
+                                                <p>8. Tax Contingency: <span  class="Value" id ="convalue"></span></p>
+                                            </div>
+                                            <div class="range-slider">
+
+                                                <input type="range" class="range-slider__range" id="other" name="other" class="range-slider__range" value="0", min="-500" max="500">
+                                                <p>9. Other items: <span class="Value" id ="ovalue"></span></p>
+                                            </div>
+                                        </div>
+
+                                    </details>
+                                    <br>
+                                    <details>
+                                    <summary>Earning Before Tax (Mio $):</summary>
+                                    <div class="range-slider">
+                                        <input type="range"  class="range-slider__range" id ="sliderEBT" value="0", min="-500" max="500">
+                                        <p><span class="Value" id ="ebtvalue"></span></p>
+                                    </div>
+                                </details>
+                              </div>
+                          </div>
+
+                      </div>
+                      <!-- plot -->
+                      <div class="col-lg-8" id="plot_chart">
+                          <div class="panel panel-default">
+                              <div style="font-size:20px;cursor:pointer" class="panel-heading">ETR of next year</div>
+                               <div class="panel-body" >
+                                   <div id="chartContainer1">
+                                    <canvas id="ETRChart1"></canvas>
+                                   </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+
+              </div>
+              <!-- botton -->
+          <div class="row">
+                  <div class="col-sm-2 next-btn" style="left: -120px; bottom: 120px">
+                      <button type="button"  class="btn btn-default next gotoG">Back</button>
+                  </div>
+                  <div class="col-sm-10"></div>
+                  <div class="col-sm-2 next-btn" style="right: -1050px; bottom: 120px">
+                      <button type="button"  class="btn btn-default next gotoA">Next</button>
+                  </div>
+              </div>
+</div>

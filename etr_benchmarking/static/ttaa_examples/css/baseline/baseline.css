@@ -1,0 +1,85 @@
+﻿/****** RTF Baseline CSS **********/
+ * {
+  /* -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important; */
+
+     font-family: 'Noto Sans', sans-serif;   
+   	   /* font-family:"Times New Roman", Times;    */
+
+} 
+
+html{
+	font-size: 100%;
+	height:100%;
+}
+body{
+	width:100%;
+	height:100%;
+	margin:0 auto;
+	padding:0;
+	 background-color: black;	  
+      /* background-image: url('/static/ttaa_examples/img/chess.jpg');   */
+	background-size: cover; 
+	background-attachment: fixed;
+	 /* font-family: 'Noto Sans', sans-serif;      */
+	 /* font-family:"Times New Roman", Times;  */
+
+
+}
+/*
+a:link, a:hover, a:visited, a:active{
+	color:#336699;
+	text-decoration:none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+button, a{
+	border:none;
+	outline: none;
+}
+
+*:focus,button:focus, *[role="button"]:focus,*[role="link"]:focus{
+	 outline:thin dotted; 
+}
+
+a:not(.btn):hover, *[role="button"], *[role="link"] {
+    text-decoration:underline; 
+}
+
+
+h1, h2{
+	color: #000;
+}
+
+h1, h2, h3, h4, h5, h6{
+	margin:0;
+	padding:0;
+}
+
+:not(pre) > span{
+	display:inline-block;
+}
+
+ul{
+  -webkit-padding-start: 0;
+}
+
+ul li{
+  list-style: none;
+  margin: 0;
+  padding:0;
+}
+/*
+ * Custom modifications to the EY online style guide
+*/
+
+footer {
+    text-align: center;
+    color: #f0f0f0;
+}
+

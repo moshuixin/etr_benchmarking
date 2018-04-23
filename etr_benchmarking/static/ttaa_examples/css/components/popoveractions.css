@@ -1,0 +1,22 @@
+﻿.popover-actions {
+	background-color: #000;
+	border-radius: 0;
+	top:18px;
+	margin:0 0 0 -145px;
+	width:158px;
+	padding: 5px 15px 10px;
+	z-index:1000;
+}
+
+.popover-actions a  {
+	color:#fff;
+	display:block;
+	padding: 8px 15px;
+}
+
+.popover-actions a:hover {
+	color:#FFEE99;
+	text-decoration:none;
+	background-color:#000; 
+	text-decoration: none;
+}

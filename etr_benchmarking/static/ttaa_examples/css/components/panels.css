@@ -1,0 +1,186 @@
+/* Primary */
+.panel-primary {
+  border-color: #FFE600;
+}
+.panel-primary > .panel-heading {
+  color: #333;
+  background-color: #FFE600;
+  border-color: #FFE600;
+}
+.panel-primary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #FFE600;
+}
+.panel-primary > .panel-heading .badge {
+  color: #FFE600;
+}
+.panel-primary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #FFE600;
+}
+
+/* Secondary */
+.panel-secondary {
+  border-color: #666;
+}
+.panel-secondary > .panel-heading {
+  color: white;
+  background-color: #666;
+  border-color: #666;
+}
+.panel-secondary > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #666;
+}
+.panel-secondary > .panel-heading .badge {
+  color: #666;
+}
+.panel-secondary > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #666;
+}
+
+/* Success */
+.panel-success {
+  border-color: #2c973e;
+}
+.panel-success > .panel-heading {
+  color: white;
+  background-color: #2c973e;
+  border-color: #2c973e;
+}
+.panel-success > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #2c973e;
+}
+.panel-success > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.panel-success > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #2c973e;
+}
+
+/* Info */
+.panel-info {
+  border-color: #00a3ae;
+}
+.panel-info > .panel-heading {
+  color: white;
+  background-color: #00a3ae;
+  border-color: #00a3ae;
+}
+.panel-info > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #00a3ae;
+}
+.panel-info > .panel-heading .badge {
+  color: #d9edf7;
+  background-color: #00a3ae;
+}
+.panel-info > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #00a3ae;
+}
+
+/* Warning */
+.panel-warning {
+  border-color: #f0ad4e;
+}
+.panel-warning > .panel-heading {
+  color: white;
+  background-color: #f0ad4e;
+  border-color: #f0ad4e;
+}
+.panel-warning > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #f0ad4e;
+}
+.panel-warning > .panel-heading .badge {
+  color: #f0ad4e;
+  background-color: #8a6d3b;
+}
+.panel-warning > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #f0ad4e;
+}
+
+/* Danger */
+.panel-danger {
+  border-color: #f04c3e;
+}
+.panel-danger > .panel-heading {
+  color: white;
+  background-color: #f04c3e;
+  border-color: #f04c3e;
+}
+.panel-danger > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #f04c3e;
+}
+.panel-danger > .panel-heading .badge {
+  color: #f04c3e;
+  background-color:#f04c3e;
+}
+.panel-danger > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #f04c3e;
+}
+
+/* Buttercup */
+.panel-buttercup {
+  border-color: #fff27f;
+}
+.panel-buttercup > .panel-heading {
+  color: black;
+  background-color: #fff27f;
+  border-color: #fff27f;
+}
+.panel-buttercup > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #fff27f;
+}
+.panel-buttercup > .panel-heading .badge {
+  color: #fff27f;
+  background-color: #fff27f;
+}
+.panel-buttercup > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #fff27f;
+}
+
+/* Purple */
+.panel-purple {
+  border-color: #91278f;
+}
+.panel-purple > .panel-heading {
+  color: white;
+  background-color: #91278f;
+  border-color: #91278f;
+}
+.panel-purple > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #91278f;
+}
+.panel-purple > .panel-heading .badge {
+  color: #91278f;
+  background-color:#91278f;
+}
+.panel-purple > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #91278f;
+}
+
+/* Lilac */
+.panel-lilac {
+  border-color: #ac98db;
+}
+.panel-lilac > .panel-heading {
+  color: black;
+  background-color: #ac98db;
+  border-color: #ac98db;
+}
+.panel-lilac > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #ac98db;
+}
+.panel-lilac > .panel-heading .badge {
+  color: #ac98db;
+  background-color:#ac98db;
+}
+.panel-lilac > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #ac98db;
+}
+
+/* Panel links */
+.panel a{
+    color: #646464
+}
+
+.panel a:hover{
+    color: #333333;
+}

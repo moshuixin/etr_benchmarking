@@ -1,0 +1,106 @@
+﻿.dropdown {
+    display:inline-block;
+}
+
+/*
+.dropdown > button,
+.dropup > button {
+    padding:10px;
+    background-color:#fff;
+    border:1px solid #c0c0c0;
+    line-height:16px;
+    outline:none !important;
+    color:#666;
+}
+*/
+
+.dropdown > button > [class*='fa-chevron'],
+.dropdown > button > [class*='fa-angle'],
+.dropup > button > [class*='fa-chevron'],
+.dropup > button > [class*='fa-angle'] {
+    float:right;
+    margin-top:2px;
+    margin-right:0;
+    margin-left:10px;
+    color:#999;
+}
+
+.dropdown > .dropdown-menu,
+.dropup > .dropdown-menu {
+    border-radius:0;
+    padding: 0 0;
+}
+
+/*
+.dropdown > .dropdown-menu {
+    margin-top:0;
+    min-width:100%;
+
+.dropdown-menu>li:last-of-type {
+    border-bottom:0;
+*/
+
+.dropdown-menu>li.disbaled>a {
+    color:#f4f4f4;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 10px;
+    clear: both;
+    font-weight: 400;
+    line-height: 16px;
+    white-space: nowrap;
+    color:#666;
+}
+
+/* Icon color in dropdown menu */
+.dropdown-menu>li>a>i.fa, 
+.dropdown-menu>li>a>div>i.fa {
+    color: #666;
+}
+
+.dropdown-menu>li>a:hover {
+    background-color:#f0f0f0;
+    color:#666;
+}
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}

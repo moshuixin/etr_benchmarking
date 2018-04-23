@@ -1,0 +1,174 @@
+{% extends "ttaa_base/layout.html" %}
+{% load static %}
+
+{% block extraCSS %}
+<link href="{% static 'ttaa_examples/vendor/vis/vis.min.css '%}" rel="stylesheet"/>
+<link href="{% static 'ttaa_examples/vendor/vis/vis-timeline-graph2d.min.css'%}" rel="stylesheet"/>
+
+  <style type="text/css">
+
+    .vis-item {
+      border-color: #FFE600;
+      background-color: #fff27f;
+      color: #333333;
+    }
+
+    .vis-item.vis-selected {
+      border-color: #91278f;
+      background-color: #c893c7;
+    }
+
+    .progress-wrapper {
+      background: white;
+      width: 100%;
+      height: 18px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress {
+      height: 100%;
+      width: 60%;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      background: #2c973e;
+    }
+
+    .progress-label {
+      position: absolute;
+      z-index: 1;
+    }
+
+
+  </style>
+
+
+{% endblock %}
+
+
+{% block content %} 
+<!-- Page Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <a href='http://www.visjs.org/'>Vis.js</a>
+            </div>
+       </div>    
+       <div class="row">        
+            <div class="col-lg-12">                        
+                <div class="panel panel-default">
+                    <div class="panel-heading">Network</div>
+                    <div class="panel-body">
+                        <div id="mynetwork" style="width: 100%;height: 400px;"></div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Timeline / Gantt</div>
+                    <div class="panel-body" style="height: 500px;">
+                        <div id="visualization" style="width: 100%;height: 400px;"></div>
+                    </div>
+                </div>      
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+<script type="text/javascript" src="{% static 'ttaa_examples/vendor/vis/vis.min.js' %}"></script>
+<script type="text/javascript">
+
+    // Setup reusable variables
+    var colors = getEyColors();
+
+    // Get the data
+    //var myData = {{ data|safe }}
+    //var Data1 = myData[0];
+    //var Data2 = myData[1];
+    //var Data3 = myData[2];
+
+    // Make Network
+  // create an array with nodes
+  var nodes = new vis.DataSet([
+    {id: 1, label: 'Node 1', color: colors.yellow50},
+    {id: 2, label: 'Node 2', color: colors.yellow50},
+    {id: 3, label: 'Node 3', color: colors.yellow50},
+    {id: 4, label: 'Node 4', color: colors.yellow50},
+    {id: 5, label: 'Node 5', color: colors.yellow50},
+    {id: 6, label: 'Node 6', color: colors.yellow50},
+    {id: 7, label: 'Node 7', color: colors.yellow50},
+    {id: 8, label: 'Node 8', color: colors.yellow50}
+  ]);
+
+  // create an array with edges
+  var edges = new vis.DataSet([
+    {from: 1, to: 8, arrows:'to', dashes:true},
+    {from: 1, to: 3, arrows:'to'},
+    {from: 1, to: 2, arrows:'to, from'},
+    {from: 2, to: 4, arrows:'to, middle'},
+    {from: 2, to: 5, arrows:'to, middle, from'},
+    {from: 5, to: 6, arrows:{to:{scaleFactor:2}}},
+    {from: 6, to: 7, arrows:{middle:{scaleFactor:0.5},from:true}}
+  ]);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {};
+  var network = new vis.Network(container, data, options);
+
+  // Make Timeline Chart
+  var now = moment().minutes(0).seconds(0).milliseconds(0);
+  var groupCount = 3;
+  var itemCount = 20;
+
+  // create a data set with groups
+  var groups = new vis.DataSet([
+    {id: 0, content: 'Justus', value: 1},
+    {id: 1, content: 'Peter', value: 2},
+    {id: 2, content: 'Bob', value: 3}
+  ]);
+
+  // create a dataset with items
+  // note that months are zero-based in the JavaScript Date object, so month 3 is April
+  var items = new vis.DataSet([
+    {id: 0, group: 1, content: 'item 0', value: 0.8, start: new Date(2014, 3, 17), end: new Date(2014, 3, 21)},
+    {id: 1, group: 1, content: 'item 1', value: 0.3, start: new Date(2014, 3, 19), end: new Date(2014, 3, 20)},
+    {id: 2, group: 0, content: 'item 2', value: 1.0, start: new Date(2014, 3, 16), end: new Date(2014, 3, 24)},
+    {id: 3, group: 1, content: 'item 3', value: 0.0, start: new Date(2014, 3, 23), end: new Date(2014, 3, 24)},
+    {id: 4, group: 2, content: 'item 4', value: 0.2, start: new Date(2014, 3, 22), end: new Date(2014, 3, 26)},
+    {id: 5, group: 2, content: 'Item 5 <small><div class="pull-right"><a href="#">Details</a></small></div>', value: 0.2, start: new Date(2014, 3, 24), end: new Date(2014, 3, 27)}
+  ]);
+
+  // create visualization
+  var container = document.getElementById('visualization');
+  var options = {
+    groupOrder: 'value',  // groupOrder can be a property name or a sorting function
+    itemOrder: 'id',
+    visibleFrameTemplate: function(item) {
+      if (item.visibleFrameTemplate) {
+        return item.visibleFrameTemplate;
+      }
+      var percentage = item.value * 100 + '%';
+      return '<div class="progress-wrapper"><div class="progress" style="width:' + percentage + '"></div><label class="progress-label">' + percentage + '<label></div>';
+    } 
+  };
+
+  var timeline = new vis.Timeline(container);
+  timeline.setOptions(options);
+  timeline.setGroups(groups);
+  timeline.setItems(items);
+
+</script>
+
+{% endblock %}

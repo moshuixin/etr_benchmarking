@@ -1,0 +1,3 @@
+# List of all required packages for this project
+pandas == 0.20
+xlrd

@@ -1,0 +1,4 @@
+﻿/*FOR TOGGLE SWITCHES*/
+ .toggle-switch .btn.active {
+  background-color: #44494f;
+}

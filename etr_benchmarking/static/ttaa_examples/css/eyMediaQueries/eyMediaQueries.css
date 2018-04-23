@@ -1,0 +1,159 @@
+/*MEDIA QUERIES FOR TOP MAIN NAVIGATION*/
+@media (max-width: 768px) {
+    .appName { /* Make AppName disappear on small devices */
+        display: none;
+    }
+    .eylogo { /* Make EY Logo disappear on small devices */
+        display: none;
+    }    
+    
+    .sidebar {
+      position: relative;
+    }    
+}
+
+@media (min-width: 768px) {
+    #page-wrapper {
+        margin: 55px 0 0 250px;
+    }
+    .sidebar-closed {
+        margin: 55px 0 0 0px;
+    }
+    
+    
+}
+/* EY ORIGINAL STUFF */
+/*
+@media (max-width: 768px){
+    
+    body {
+        font-size: 4.2vw;
+        line-height:5vw;
+    }
+
+
+    h1 {
+        font-size: 10.6vw;
+        line-height: 13.8vw;
+    }
+
+
+    h2{
+        font-size:8vw;
+        line-height:10.2vw;
+    }
+
+    h3{
+        font-size:7.2vw;
+        line-height:9.4vw;
+    }
+
+    h4 {
+        font-size: 6vw;
+        line-height: 7.5vw;
+    }
+
+    h5{
+        font-size:5.5vw;
+        line-height:6.95vw;
+    }
+
+    h6{
+        font-size:4.2vw;
+        line-height:5.75vw;
+    }
+
+    nav .applicationName {
+        display:none;
+    }
+    nav .container.primary {
+        position:relative;
+        padding:0 0 0 10px;
+        height:44px;
+    }
+
+    .primary .logo, .applicationName .logo {
+        display:inline-block;
+        height: 44px;
+        cursor: pointer;
+        background-color: inherit;
+    }
+
+    .primary .logo img {
+	    width: 28px;
+	    height:34px;
+    }
+
+    .primary .nav-links {
+        display:none;
+        margin:0;
+        padding:0;
+        float:right;
+        position:absolute;
+        width:100%;
+        top:44px;
+        left:0;
+        max-height:500px;
+        overflow-x:hidden;
+        overflow-y:auto;
+        background-color:#000;
+        z-index:10;
+    }
+
+    .nav-links a,
+    .primary .nav-links > .dropdown {
+        display:block !important;
+        clear:both;
+    }
+
+    .nav-links a,
+    .nav-links > .dropdown > a,
+    .nav-links .dropdown-menu > li > a{
+        position:relative;
+        padding: 17px 20px;
+        line-height:normal;
+        border-bottom:1px solid #666;
+        line-height:16px;
+    }
+
+    .nav-links a:hover,
+    .nav-links .dropdown-menu > a:hover{
+        line-height:normal;
+        border-bottom:1px solid #666;
+        background-color:#000;
+        padding: 14px 20px;
+        line-height:16px;
+    }
+
+    .primary .nav-links > .dropdown.open > a {
+        border-bottom:1px solid #000;
+    }
+
+    .nav-links .dropdown > .dropdown-menu, 
+    .nav-links .dropup > .dropdown-menu {
+        position:relative;
+        border-radius: 0;
+        margin:0;
+        padding: 0 0;
+        background-color: #333;
+        width: 100%;
+    }
+
+    .nav-links .dropdown-menu > li {
+        border-bottom:none;
+    }
+
+    .nav-links .dropdown-menu > li a {
+        background-color:#333;
+    }
+
+    .nav-links .dropdown-menu > li a {
+        padding-left:32px;
+    }
+    .primary .nav-links > .dropdown > a > span.caret{
+        margin-top:8px;
+        float:right;
+    }
+
+*/
+}

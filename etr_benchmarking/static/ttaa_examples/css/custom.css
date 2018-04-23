@@ -1,0 +1,483 @@
+﻿/* Example for Custom css styles; Remove color-blocks if you don't need it */
+.color-blocks {
+    display:inline-block;
+    width:75px;
+    height:75px;
+    vertical-align:top;
+}
+
+.color-blocks.ey-white {
+    border:1px solid #000;
+}
+
+.collapsed{
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Flex */
+     
+.row-flex, .row-flex > div[class*='col-'] {  
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex:1 1 auto;
+}
+
+.row-flex-wrap {
+    -webkit-flex-flow: row wrap;
+    align-content: flex-start;
+    flex:0;
+}
+
+.row-flex > div[class*='col-'], .container-flex > div[class*='col-'] {
+     margin:-.2px; /* hack adjust for wrapping */
+}
+
+.container-flex > div[class*='col-'] div,.row-flex > div[class*='col-'] div {
+    width:100%;
+}
+
+.flex-col {
+    display: flex;
+    display: -webkit-flex;
+    flex: 1 100%;
+    flex-flow: column nowrap;
+}
+
+.flex-grow {
+    display: flex;
+    -webkit-flex: 2;
+    flex: 2;
+}
+
+
+
+
+
+html, body {
+height: 100%;
+}
+body {
+overflow:hidden;
+}
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgba(0,0,0,0.5);
+  font-size: 2rem;
+  min-height: 100%;
+  height: 100%;
+}
+.Quick-navigation {
+   position: fixed;
+  z-index: 1;
+  margin: 0px;
+  top: 50%; 
+  right: 50px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); 
+
+}
+.Quick-navigation-item {
+  color: grey;
+  text-decoration: none;
+  font-size: 1.3em;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  padding: 0.5em;
+  display: block;  
+}
+.Quick-navigation-item:hover,
+.Quick-navigation-item.current {
+  color: #fff;
+}
+.Scroll-progress-indicator {
+  will-change: opacity, transform;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  left: -10px;
+  border-radius: 2px;
+  position: absolute;
+  top: 50%;
+  opacity: 0;
+  padding: 2em;
+  -webkit-transform: translateX(200%) translateY(-50%);
+          transform: translateX(200%) translateY(-50%);
+  background-color: rgba(0,0,0,0.1);
+}
+.Scroll-progress-indicator.visible {
+  -webkit-transform: translateX(-100%) translateY(-50%);
+          transform: translateX(-100%) translateY(-50%);
+  opacity: 1;
+}
+/*#A {
+   background-color: #dc143c;
+   height: 100%;
+}*/
+
+.js-scroll-step{
+    height: 100%;
+ }
+
+.Scroll-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.2);
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 1.5rem;
+  padding: 0.5em;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  outline: none;
+}
+.Scroll-to-top.visible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.Scroll-to-top:hover {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Effective Tax Rate Analytics  */
+.title-f {
+    /* width: 300px;    */
+    /* border: 25px solid; */
+    padding: 50px;
+    margin: 25px;
+    margin-top: 30px;
+    background-color: transparent;
+    
+}
+
+.first-title{
+    color: #f0f0f0;
+    /* text-align:center; */
+    font-family: 'Noto Sans', sans-serif;   
+    font-size: 70px;
+}
+
+/* which company are you ...  */
+.title-s{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.second-title{
+    color: #f0f0f0;
+    font-family: 'Noto Sans', sans-serif;   
+    font-size:50px;
+}
+
+.input-content{
+    /* border: 10px solid green;  */
+    width: 1200px;
+    height: 400px;
+}
+.drop-box{
+    margin-top: 20px;
+    /* border: 10px solid blue;  */
+    height: 250px;
+}
+
+.num-content{
+    /* border: 10px solid blue;  */
+    height: 250px;
+}
+
+.r-slider{
+    /* border: 10px solid blue;  */
+    height: 250px;
+}
+
+select{
+    width: 400px;
+    height: 40px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.next-btn{
+    bottom: 0px;
+    height: 100px;
+    width: 100px;
+    /* border: 10px solid white;    */
+    position: relative;
+    right: -50px;
+}
+
+.next{
+    background-color: #c0c0c0;
+    background: transparent;
+    color: #c0c0c0;   
+    opacity: 0.6;
+    height: 80px;
+    width: 80px;
+    padding: 15px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border: 5px solid #999999; 
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 50%;
+}
+.next:hover {
+    opacity: 1;
+    background-color: #646464; /* Green */
+    border: 5px solid #ffe600;
+    color: #ffe600;
+}
+
+
+/*slider  */
+#yourETRSlider .rs-range-color  {
+    background-color: #ffe600;
+}
+#yourETRSlider .rs-path-color  {
+    background-color: #c0c0c0;
+}
+#yourETRSlider .rs-handle  {
+    background-color: #999999;
+    padding: 7px;
+    border: 2px solid #999999;
+}
+#yourETRSlider .rs-handle.rs-focus  {
+    border-color: #646464;
+}
+#yourETRSlider .rs-handle:after  {
+    border-color: #646464;
+    background-color: #646464;
+}
+#yourETRSlider .rs-border  {
+    border-color: transparent;
+}
+#yourETRSlider .rs-tooltip  {
+    font-size: 40px; 
+    text-align: center;
+    color: #808080;
+    vertical-align: middle;
+}
+/*  */
+#yourGoalETRSlider .rs-range-color  {
+    background-color: #ffe600;
+}
+#yourGoalETRSlider .rs-path-color  {
+    background-color: #c0c0c0;
+}
+#yourGoalETRSlider .rs-handle  {
+    background-color: #999999;
+    padding: 7px;
+    border: 2px solid #999999;
+}
+#yourGoalETRSlider .rs-handle.rs-focus  {
+    border-color: #646464;
+}
+#yourGoalETRSlider .rs-handle:after  {
+    border-color: #646464;
+    background-color: #646464;
+}
+#yourGoalETRSlider .rs-border  {
+    border-color: transparent;
+}
+#yourGoalETRSlider .rs-tooltip  {
+    font-size: 40px; 
+    text-align: center;
+    color: #808080;
+    vertical-align: middle;
+}
+/*  */
+#yourPeersETRSlider .rs-range-color  {
+    background-color: #ffe600;
+}
+#yourPeersETRSlider .rs-path-color  {
+    background-color: #c0c0c0;
+}
+#yourPeersETRSlider .rs-handle  {
+    background-color: #999999;
+    padding: 7px;
+    border: 2px solid #999999;
+}
+#yourPeersETRSlider .rs-handle.rs-focus  {
+    border-color: #646464;
+}
+#yourPeersETRSlider .rs-handle:after  {
+    border-color: #646464;
+    background-color: #646464;
+}
+#yourPeersETRSlider .rs-border  {
+    border-color: transparent;
+}
+#yourPeersETRSlider .rs-tooltip  {
+    font-size: 40px; 
+    text-align: center;
+    color: #808080;
+    vertical-align: middle;
+}
+
+
+/*background-video*/
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1000;
+    /* opacity: 0.5;
+    background: black; */
+}
+
+.fullscreen-bg__video {
+    background-image: url(/static/ttaa_examples/img/black.jpg); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+    opacity: 0.5;    
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: auto;
+    height: 100%;
+  }
+}
+
+/*navbar style  */
+.navbar-default{
+    background-color: transparent;
+}
+
+.navbar-right{
+    background-color: transparent;
+}
+
+/*dot navigation 2  */
+.dotstyle ul {
+	/* position: relative; */
+	display: inline-block;
+	/* margin: 0; */
+	padding: 0;
+	list-style: none;
+	cursor: default;
+}
+
+.dotstyle li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0 16px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.dotstyle li a {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	outline: none;
+	border-radius: 50%;
+	 background-color: #fff; 
+	/* background-color: rgba(255,255,255,0.3); */
+	text-indent: -999em;
+	cursor: pointer; /* make the text accessible to screen readers */
+	position: absolute;
+}
+
+/* Fill up */
+.dotstyle-fillup li a {
+	overflow: hidden;
+	background-color: rgba(0,0,0,0);  
+	box-shadow: inset 0 0 0 2px rgba(255,255,255,1); 
+	transition: background 0.3s;
+}
+
+/* .dotstyle-fillup li a:hover,
+.dotstyle-fillup li a:focus {
+	background-color: red;
+} */
+
+ .panel{ 
+       background-color: rgba(255,255,255,0.7);   
+      /* background-color: rgba(0, 0, 0, 0.4);   */
+    /* color: white; */
+    border: 0px solid black;
+}
+
+ .panel:hover{
+    background-color: rgba(255,255,255,0.9);
+} 
+
+/* .panel-body{
+    color: white;
+} */
+
+.panel-heading{
+    /* background-color: red; */
+    opacity: 0.5;
+    color: white;
+}
+
+#reconciliationItemsTable {
+    color: black;
+}
+
+/*filter input  */
+.filterInput {
+    /* background-image: url('/css/searchicon.png');  Add a search icon to input  */
+    color: black;
+    opacity: 1;
+    /* background-position: 10px 12px;  Position the search icon  */
+    /* background-repeat: no-repeat;  Do not repeat the icon image  */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 5px 12px 5px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+}
+
+
+
+/* Make sure that padding behaves as expected */
+/* * {box-sizing:border-box} */
+
+
+/* .bigscreen{
+    height:400px;
+}
+
+ @media screen and (max-height : 800px) {
+    .smallscreen-barchart{
+        height: 300px;
+    }
+}  */

@@ -1,0 +1,287 @@
+/***** Primary Navigation *****/
+/*
+.primary-cont {
+    background-color:#333;
+    padding:0 0;
+}
+
+.primary{
+	font-size:16px;
+	color:#c0c0c0;
+	height:80px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 100%;
+}
+
+.applicationName h2{
+  font-family: 'NotoSans', 'Arial Unicode MS Regular', sans-serif; 
+  font-size:14px;
+  font-weight: normal;
+  line-height: normal;
+  height:40px;
+  border-bottom:1px solid #666;
+  padding:10px 14px 10px !important;
+  color:#c0c0c0;
+}
+*/
+
+/* Icon color in navbar */
+.nav .fa {
+    color: #f0f0f0;
+}
+
+/* Navbar general colors */
+.nav-links{
+    background-color:#333;
+    color: #f0f0f0;
+/*
+    height: 80px;
+*/
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 0px;
+}
+
+/* Navbar links */
+.nav>li>a:focus,
+.nav>li>a:visited,
+.nav>li>a,
+#sidebar-area .nav>li>a:focus,
+.sidebar ul li{
+    border-bottom: 5px solid #333;
+    background-color:#333;
+    color: #f0f0f0;
+    outline: 0px;
+}
+
+/* Hover and active links */
+.nav>li>a:hover,
+.nav>li>a:active,
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover,
+/*
+#sidebar-area .nav>li:hover,
+*/
+#sidebar-area .nav>li>a:hover,
+.sidebar ul li a.active {
+    outline: 0px;
+	border-bottom:5px solid #ffe600;
+	color:#c0c0c0;	
+    background-color:#000;
+}
+
+/* Second and third level dropdown settings */
+.sidebar .nav-second-level li, .sidebar .nav-third-level li {
+    border-bottom: 0!important;
+    border-top: 0px dotted #3D83C0;
+}
+
+/* Sidebar Search Settings */
+li.sidebar-search:hover{
+    outline: 0px;
+	border-bottom:0px solid #ffe600;
+	color:#c0c0c0;	
+    background-color: #FFE600!important;
+}
+
+li.sidebar-search:hover{
+    outline: 0px;
+	border-bottom:0px solid #ffe600;
+	color:#c0c0c0;	
+    background-color: #FFE600!important;
+}
+
+li.sidebar-search i.fa{
+    color: #999999;
+}
+
+.sidebar {
+  position: fixed;
+}
+
+.nav>li>a.dynamic-menu-title {
+   pointer-events: none;
+   cursor: default;
+   background-color:#646464;
+   color:  #f0f0f0;
+   font-weight:bold;   
+   padding-top:5px;
+   padding-bottom:5px;
+}
+/*
+.primary > .logo img {
+    width:48px;
+    height:54px;
+}
+
+.primary .logo,
+.applicationName .logo{
+	width: 37px;
+	height:44px;
+	margin: 0px 10px 0 10px;
+	padding:0;
+	background-color:transparent;
+}
+
+.primary > .logo {
+    width:60px;
+    line-height:75px;
+}
+
+.primary .logo button{
+  padding:0;
+  margin:0;
+  border-bottom:none;
+  background-color: transparent;
+}
+
+.nav-links > a,
+.nav-links > .dropdown > a{
+	color:#c0c0c0;
+	display: inline-block;
+	float: none;
+  border-bottom:5px solid #333;
+  line-height:47px;
+}
+
+.nav-links a,
+.nav-links a:link,
+.nav-links a:visited{
+	padding:14px 20px;
+	color:#c0c0c0;
+}
+
+.nav-links > a:hover,
+.nav-links > a.active,  This adds active "state" to navbar items" 
+/*
+.nav-links > .dropdown.open > a,
+.nav-links > .dropdown > a:hover{
+	padding:14px 20px;
+	border-bottom:5px solid #ffe600;
+	text-decoration: none;
+	color:#c0c0c0;	
+    background-color:#000;
+}
+
+.nav-links a > .caret,
+.nav-links a > .fa{
+    margin-left:10px;
+}
+
+.nav-links .dropdown {
+    display:inline-block;
+}
+
+.nav-links .dropdown-menu>li>a {
+    color:#c0c0c0;
+    padding:17px 20px 16px;
+    background-color:#000;
+}
+.nav-links .dropdown-menu>li>a:hover {
+    background-color:#666;
+    color:#c0c0c0;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #f4f4f4;
+}
+
+.navbar-toggle .icon-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  margin:3px 0;
+}
+
+.collapse.in, .navbar-collapse.collapse {
+    display:inline-block !important;
+}
+
+.primary .navbar-collapse.collapse.in+.navbar-toggle.collapsed {
+    background-color: #000;
+
+}
+
+ Use this to include links in collapsed navigation bar 
+/*
+.nav-links > a.appName.collapse:link{
+  display: none;
+}
+*/
+
+/* Logo */
+.eylogo{
+	width: 37px;
+	height:44px;
+	margin: 5px 0px 5px 0px;
+}
+
+.applogo{
+    color: #f0f0f0;
+	margin: 0px 20px 0px 20px;
+}
+
+.applogo .fa{
+    color: #f0f0f0;
+	margin: 7px 0px 3px 0px;
+    font-size: 40px;
+}
+
+.appName {
+    margin-top: 5px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+	border-bottom:0px solid #333333;
+}
+
+.toggleBox {
+    position: relative;
+    border: 1px solid #ddd;
+}
+ 
+/* Ausblenden des input-Feldes */
+.toggleBox input {
+    position: absolute;
+    left: -99999px;
+}
+ 
+/* Gestaltung der labels */
+.toggleBox label {
+    display: block;
+    background: #68B022;
+    color: #fff;
+    padding: .4em;
+    text-align: center;
+    cursor: pointer;
+}
+ 
+.toggleBox label:hover {
+    background: #ddd;
+}
+ 
+/* Der Aufklappmechanismus */
+.toggleBox input:not(:checked) ~ div {
+    opacity: 0;
+    height: 0;
+}
+ 
+.toggleBox input:checked ~ div {
+    opacity: 1;
+    padding: .8em;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+ 
+/* Steuerung der Sichtbarkeit der labels */
+.toggleBox input:not(:checked) ~ .close,
+.toggleBox input:checked ~ .open {
+    display: none;
+}

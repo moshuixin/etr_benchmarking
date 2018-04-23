@@ -1,0 +1,12 @@
+﻿.tooltip-inner {
+    padding: 20px 20px;
+    border-radius: 0;
+}
+
+.tooltip.top {
+    margin-top: -5px;
+}
+
+.tooltip.top .tooltip-arrow {
+    left: 100%;
+}

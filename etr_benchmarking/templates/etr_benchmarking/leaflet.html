@@ -1,0 +1,75 @@
+{% extends "ttaa_base/layout.html" %}
+{% load static %}
+
+{% block extraCSS %}
+<link rel="stylesheet" href="{% static 'ttaa_base/vendor/leaflet/leaflet.css' %}" />
+{% endblock %}
+
+{% block content %} 
+
+<!-- Page Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                 <a href='http://leafletjs.com/'>Leaflet</a>
+                 <div id="mapid" style="height:500px;"></div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+        
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'ttaa_base/vendor/leaflet/leaflet.js' %}"></script>
+<script type="text/javascript">
+
+    // Map from Leaflet tutorial
+
+    // Initialize Map
+    var mymap = L.map('mapid').setView([51.3, 9.3], 4); //First is the initial coordinates, second is the zoom level
+
+    // Add Layer
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+        maxZoom: 18,
+        id: 'openstreetmap.streets',
+    }).addTo(mymap);
+
+    // Markers, circles and polygons
+    var LondonMarker = L.marker([51.5, -0.09]).addTo(mymap);
+    var BerlinMarker = L.marker([52.5, 13.4]).addTo(mymap);
+    var ParisMarker = L.marker([48.9, 2.3]).addTo(mymap);
+
+    // Pop-Ups
+    var LondonMarkup = "<b>London</b>"
+    LondonMarkup += "<br>Status: In Progress<br>"
+    LondonMarkup += "<a href="+{% url 'charts' %}+">See project status</a>";
+    LondonMarker.bindPopup(LondonMarkup);
+
+    var BerlinMarkup = "<b>Berlin</b>"
+    BerlinMarkup += "<br>Status: In Progress<br>"
+    BerlinMarkup += "<a href='#'>See project status</a>";
+    BerlinMarker.bindPopup(BerlinMarkup);
+
+    var ParisMarkup = "<b>Paris</b>"
+    ParisMarkup += "<br>Status: Complete<br>"
+    ParisMarkup += "<a href='#'>See project status</a>";
+    ParisMarker.bindPopup(ParisMarkup);    
+
+    // Events
+    var popup = L.popup();
+
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(mymap);
+    }
+
+    mymap.on('click', onMapClick);
+</script>
+
+{% endblock %}

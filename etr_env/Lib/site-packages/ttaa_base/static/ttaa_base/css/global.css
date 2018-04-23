@@ -1,0 +1,33 @@
+﻿/*Baseline EY theme */
+@import "baseline/baseline.css";
+
+/*Box Shadow EY theme */
+@import "boxshadow/boxshadow.css";
+
+/*Colors EY theme */
+@import "colors/colors.css";
+ 
+/* navigation */
+@import "navigation/navigation.css";
+@import "navigation/tabs.css";
+
+/* Media Queries */
+@import "eyMediaQueries/eyMediaQueries.css";
+
+/* Components */
+@import "components/modal.css";
+@import "components/popoveractions.css";
+@import "components/tooltips.css";
+@import "components/messages.css";
+@import "components/panels.css";
+
+/*Page Elements */
+@import "forms/forms.css";
+@import "forms/dropdown.css";
+@import "tables/tables.css";
+@import "icons/icons.css"; 
+@import "buttons/buttons.css";
+@import "buttons/toggle_buttons.css";
+@import "buttons/toggle_switches.css";
+
+

@@ -1,0 +1,453 @@
+{% extends "ttaa_base/layout.html" %}
+{% block content %} 
+
+        <!-- Page Content -->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-lg-12">                        
+                        <div class="row equal">
+
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Your current ETR</div>
+                                    <div class="panel-body">
+                                        <canvas id="doughnutChartcurrent" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Your aim</div>
+                                    <div class="panel-body">
+                                        <canvas id="doughnutChartaim" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>     
+          
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Your peers</div>
+                                    <div class="panel-body">
+                                        <canvas id="doughnutChartpeers" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+
+
+
+
+                <div class="row">
+                    <!--<div class="col-lg-12">
+                        <a href='http://www.chartjs.org/'>Chart.js</a>
+                    </div>-->
+                    <div class="col-lg-12">                        
+                        <div class="row equal">
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Your development</div>
+                                    <div class="panel-body">
+                                        <div id="customizationpanel" >
+                                            <canvas id="barChartdevelopment" width="400" height="200"></canvas>
+                                        </div>
+                                    </div>
+                                </div>                
+                            </div>
+     
+                            <div class="col-md-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Peers' development</div>
+                                    <div class="panel-body">
+                                        <div id="customizationpanel" >
+                                            <canvas id="barChartpeers" width="400" height="200"></canvas>
+                                        </div>
+                                    </div>
+                                </div>                
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+
+
+                <div class="row">
+
+                    <div class="col-lg-12">                        
+                        <div class="row equal">
+
+                            <div class="panel panel-default">
+                                <div class="panel-heading">General ETR development</div>
+                                <div class="panel-body">
+                                    <div id="customizationpanel" >
+                                        <canvas id="barChartgeneral" width="400" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>                
+
+     
+                            
+                        </div>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+
+{% endblock %}
+
+{% block scripts %}
+
+{% load static %}
+<script type="text/javascript" src="{% static 'ttaa_base/vendor/chartjs/Chart.min.js' %}"></script>
+<script type="text/javascript">
+
+// Setup reusable variables
+var colors = getEyColors();
+var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+// Get the data
+var myData = {{ data|safe }}
+var Data1 = myData[0];
+var Data2 = myData[1];
+var Data3 = myData[2];
+
+
+// Make Line Chart peers development
+var ctx = document.getElementById("barChartdevelopment").getContext("2d");
+var myChart3 = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2014", "2015", "2016"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: colors.yellow50,
+            borderColor: colors.yellow,
+            data: Data1,
+            fill: false,
+        }, {
+            label: "My Second dataset",
+            fill: false,
+            backgroundColor: colors.blueSpecial50,
+            borderColor: colors.blueSpecial,
+            data: Data2,
+        }]
+    },
+    options: {
+        responsive: true,
+        //title:{
+            //display:true,
+            //text:'Chart.js Line Chart'
+        //},
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+        },
+        hover: {
+            mode: 'nearest',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Month'
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Value'
+                }
+            }]
+        }
+    }
+});
+// Make Line Chart peers development
+var ctx = document.getElementById("barChartpeers").getContext("2d");
+var myChart3 = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2014", "2015", "2016"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: colors.yellow50,
+            borderColor: colors.yellow,
+            data: Data1,
+            fill: false,
+        }, {
+            label: "My Second dataset",
+            fill: false,
+            backgroundColor: colors.blueSpecial50,
+            borderColor: colors.blueSpecial,
+            data: Data2,
+        }]
+    },
+    options: {
+        responsive: true,
+        //title:{
+            //display:true,
+            //text:'Chart.js Line Chart'
+        //},
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+        },
+        hover: {
+            mode: 'nearest',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Month'
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Value'
+                }
+            }]
+        }
+    }
+});
+
+
+// Make Line Chart general
+var ctx = document.getElementById("barChartgeneral").getContext("2d");
+var myChart3 = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ["2014", "2015", "2016"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: colors.yellow50,
+            borderColor: colors.yellow,
+            data: Data1,
+            fill: false,
+        }, {
+            label: "My Second dataset",
+            fill: false,
+            backgroundColor: colors.blueSpecial50,
+            borderColor: colors.blueSpecial,
+            data: Data2,
+        }]
+    },
+    options: {
+        responsive: true,
+        //title:{
+            //display:true,
+            //text:'Chart.js Line Chart'
+        //},
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+        },
+        hover: {
+            mode: 'nearest',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Month'
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Value'
+                }
+            }]
+        }
+    }
+});
+
+// Make Doughnut Chart
+var ctx = document.getElementById("doughnutChartcurrent").getContext("2d");
+var myChart4 = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: Data1,
+            backgroundColor: [
+                colors.yellow,
+                colors.blueSpecial,
+                colors.purpleSpecial
+
+            ],
+            label: 'Dataset 1'
+        }],
+        labels: [
+            "Your current ETR",
+            "Blue",
+            "Purple"
+        ]
+    },
+    options: {
+        responsive: true,
+        legend: {
+            position: 'top',
+        },
+        //title: {
+            //display: true,
+            //text: 'Chart.js Doughnut Chart'
+        //},
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+    }
+});
+
+
+
+// Make Doughnut Chart
+var ctx = document.getElementById("doughnutChartaim").getContext("2d");
+var myChart4 = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: Data1,
+            backgroundColor: [
+                colors.yellow,
+                colors.blueSpecial,
+                colors.purpleSpecial
+
+            ],
+            label: 'Dataset 1'
+        }],
+        labels: [
+            "Yellow",            
+            "Your aim",
+            "Purple"
+
+
+        ]
+    },
+    options: {
+        responsive: true,
+        legend: {
+            position: 'top',
+        },
+        //title: {
+            //display: true,
+            //text: 'Chart.js Doughnut Chart'
+        //},
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+    }
+});
+
+
+
+
+// Make Doughnut Chart
+var ctx = document.getElementById("doughnutChartpeers").getContext("2d");
+var myChart4 = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        datasets: [{
+            data: Data1,
+            backgroundColor: [
+                colors.yellow
+
+
+            ],
+            label: 'Dataset 1'
+        }],
+        labels: [
+            "Peers' ETR"
+
+
+        ]
+    },
+    options: {
+        responsive: true,
+        legend: {
+            position: 'top',
+        },
+        //title: {
+          //  display: true,
+           // text: 'Your ETR'
+        //},
+        animation: {
+            animateScale: true,
+            animateRotate: true
+        }
+    }
+});
+
+
+
+// Ajax to fill in the line charts
+$(document).ready(function(){
+    getCompanyDropdownValues();
+    getIndustryDropdownValues();
+
+    function getIndustryDropdownValues() {
+        $.ajax({
+                type: "POST",
+                url: '../getIndustryDropdownValues/',
+                data: "",
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function (response){
+                    var industryList = response.industryList;
+                    for (var i = 0; i < industryList.length; i++){
+                        $('#industryDropdown').append('<option>'+industryList[i]+'</option>');
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("Status: " + textStatus + " " + "Error: " + errorThrown);
+                }
+        });
+    }
+    function getCompanyDropdownValues() {
+        $.ajax({
+                type: "POST",
+                url: '../getCompanyDropdownValues/',
+                data: "",
+                dataType: 'json',
+                contentType: false,
+                processData: false,
+                success: function (response){
+                console.log(response);
+                    var companyList = response.companyList;
+                    for (var i = 0; i < companyList.length; i++){
+                        $('#companyDropdown').append('<option>'+companyList[i]+'</option>');
+                    }
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("Status: " + textStatus + " " + "Error: " + errorThrown);
+                }
+        });
+    }
+
+});
+
+</script>
+
+{% endblock %}
